@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-image: url("http://www.kethinov.com/images/startrek/trekpapers/TOS1x21j.png");
+  background-image: url(./assets/img/startrek.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
