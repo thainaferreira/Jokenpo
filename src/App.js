@@ -1,22 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Score from './components/Score'
+import Play from './components/Play'
+import Victory from './components/Victory'
+import Result from './components/Result'
+import personagens from './assets/img/personagens.png'
 
 function App() {
+  const [score, setScore] = useState({user: 0, pc: 0, condition:""})
+  const [choice, setChoice] = useState({user: 0, pc: 0})
+  
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Victory score={ score.condition }/>
+        <Score score={score}/>
+        <Result result={ choice.pc }/>
+        <Play score={score} setScore={setScore} choice={choice} setChoice={setChoice}/>
+        <img src={personagens} alt="star trek" className="image"/>
       </header>
     </div>
   );
